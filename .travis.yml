@@ -1,0 +1,38 @@
+language: php
+
+# required for "git tag" presence for MonorepoBuilder split and ChangelogLinker git tags resolver
+# see https://github.com/travis-ci/travis-ci/issues/7422
+git:
+  depth: false
+
+jobs:
+  include:
+    - stage: standards
+      name: Checking standards
+      php: 8.0
+      script:
+        - make composer-install
+        - make phpcs-psr1
+        - make phpcs-psr1
+        - make phpstan
+    - &test-stage
+      stage: test
+      name: PHP 8.0
+      php: 8.0
+      script:
+        - make composer-install
+        - make php-phpspec
+    - stage: split
+      name: Split for repositories
+      php: 8.0
+      script: |
+        if [[ $TRAVIS_EVENT_TYPE == "push" ]]; then
+          make composer-install
+          vendor/bin/monorepo-builder split -v
+        fi
+
+stages:
+  - standards
+  - test
+  - name: split
+    if: branch = master

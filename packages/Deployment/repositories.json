@@ -1,0 +1,5 @@
+{
+  "repositories": [
+    { "type": "path", "url": "../../../core", "options": {"symlink": false}}
+  ]
+}

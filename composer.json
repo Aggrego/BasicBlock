@@ -1,0 +1,37 @@
+{
+    "name": "aggrego/basic-block",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Kunicki"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "aggrego/core": "dev-master",
+        "phpspec/phpspec": "^7.1",
+        "symplify/monorepo-builder": "^9.4",
+        "wikimedia/composer-merge-plugin": "^2.0"
+    },
+    "autoload": {
+        "exclude-from-classmap": [
+            "packages/Aggrego/Component/BasicBlockComponent/CoreDomainPlugin/spec/"
+        ],
+        "psr-4": {
+            "Aggrego\\Component\\BasicBlockComponent\\CoreDomainPlugin\\": "packages/Aggrego/Component/BasicBlockComponent/CoreDomainPlugin/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\Aggrego\\Component\\BasicBlockComponent\\CoreDomainPlugin\\": "packages/Aggrego/Component/BasicBlockComponent/CoreDomainPlugin/spec/"
+        }
+    },
+    "replace": {
+        "aggrego/basic-block-component-core-domain-plugin": "self.version",
+        "aggrego/basic-block-deployment": "self.version"
+    },
+    "minimum-stability": "dev"
+}

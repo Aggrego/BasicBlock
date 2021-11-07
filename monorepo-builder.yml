@@ -1,0 +1,12 @@
+parameters:
+
+  package_directories:
+    - 'packages'
+
+  merge_sections:
+    - 'require'
+    - 'require-dev'
+    - 'autoload'
+    - 'autoload-dev'
+
+  directories_to_repositories:

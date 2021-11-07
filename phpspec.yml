@@ -1,0 +1,7 @@
+#composer_suite_detection: true
+suites:
+  aggrego_component_basicblockcomponent_domain_suite:
+    spec_path: packages/Aggrego/Component/BasicBlockComponent/CoreDomainPlugin
+    src_path: packages/Aggrego/Component/BasicBlockComponent/CoreDomainPlugin/src
+    namespace: Aggrego\Component\BasicBlockComponent\CoreDomainPlugin
+    psr4_prefix: Aggrego\Component\BasicBlockComponent\CoreDomainPlugin

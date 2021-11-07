@@ -1,0 +1,11 @@
+{
+    "name": "aggrego/basic-block-deployment",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "symplify/monorepo-builder": "^9.4",
+        "wikimedia/composer-merge-plugin": "^2.0",
+        "aggrego/core": "dev-master"
+    }
+}
